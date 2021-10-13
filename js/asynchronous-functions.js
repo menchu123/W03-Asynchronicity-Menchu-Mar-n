@@ -14,4 +14,21 @@ const getUserId = (name) => {
   });
 };
 
-export default getUserId;
+const getUserDataById = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (id === 100) {
+        const error = "Luis, don't cheat on me!";
+        reject(error);
+      } else {
+        const user = {
+          id: id,
+          dni: "12345678-Q",
+        };
+        resolve(user);
+      }
+    }, 2000);
+  });
+};
+
+export default { getUserId, getUserDataById };
