@@ -1,6 +1,13 @@
 const getUserId = (name) => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {}, 2000);
+    setTimeout(() => {
+      const id = Math.floor(Math.random() * 99);
+      if (name === "Luis") {
+        reject();
+      } else {
+        resolve();
+      }
+    }, 2000);
   });
 };
 
