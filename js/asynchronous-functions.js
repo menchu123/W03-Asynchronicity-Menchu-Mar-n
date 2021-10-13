@@ -1,11 +1,14 @@
+// const errorMessage = document.querySelector(".error");
+
 const getUserId = (name) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const id = Math.floor(Math.random() * 99);
+      const id = Math.floor(Math.random() * 120);
       if (name === "Luis") {
-        reject();
+        const error = "I'm sick of you!";
+        reject(error);
       } else {
-        resolve();
+        resolve(id);
       }
     }, 2000);
   });
