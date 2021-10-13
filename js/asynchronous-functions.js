@@ -31,4 +31,27 @@ const getUserDataById = (id) => {
   });
 };
 
-export default { getUserId, getUserDataById };
+const getFinesByDNI = (dni) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (dni === "11111111A") {
+        const error = "Luis, really? 😒";
+        reject(error);
+      } else {
+        const multas = [
+          {
+            reason: "Drinking and driving",
+            fine: "680€",
+          },
+          {
+            reason: "Texting",
+            fine: "370€",
+          },
+        ];
+        resolve(multas);
+      }
+    }, 2000);
+  });
+};
+
+export default { getUserId, getUserDataById, getFinesByDNI };
